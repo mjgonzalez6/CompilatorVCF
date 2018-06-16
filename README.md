@@ -6,7 +6,7 @@ Probar expresiones regulares: https://regex101.com/
 
 comandos para ejecutar:
 
-bison -d gram.y		-> gram.tab.g y gram.tab.h
-flex regex.l		-> lex.
-gcc -o nombredemiprograma gram.tab.c lex.yy.c -ll
-./nombredemiprograma archivo
+* bison -d gram.y		-> gram.tab.g y gram.tab.h
+* flex regex.l		-> lex.
+* gcc -o nombredemiprograma gram.tab.c lex.yy.c -ll
+* ./nombredemiprograma archivo
