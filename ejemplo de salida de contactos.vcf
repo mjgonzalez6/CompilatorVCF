@@ -1,0 +1,28 @@
+BEGIN:VCARD
+VERSION:2.1
+N:;AaCasa;;;
+FN:AaCasa
+TEL;VOICE;PREF:222554723
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Fernandez;Alberto;;;
+FN:Alberto Fernandez
+TEL;CELL:+56996545698
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Ochagavia;Adolfo;;;
+FN:Adolfo Ochagavia
+TEL;CELL:+31611106343
+EMAIL;PREF:aochagavia@uc.cl
+BDAY:1992-12-11
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:;Abuelo;;;
+FN:Abuelo
+TEL;CELL:+56984249108
+EMAIL;PREF:lalvarez@tdopihue.cl
+EMAIL;HOME:lalvarez.la@gmail.com
+END:VCARD
