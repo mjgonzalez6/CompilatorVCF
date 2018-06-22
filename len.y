@@ -2,6 +2,7 @@
     #include <stdio.h>
     int yylex();
     void yyerror(const char *s);
+    FILE *fp = NULL;
 %}
 
 %union{      
@@ -21,30 +22,45 @@
 %token<str> EOL
 
 
+
 %%
-final_program: BGNP program ENDP
+final_program: BGNP program 
 
+program: 
+| new_contact program
+;
 
-program: {printf("");}
-| program line
+new_contact: NEW {fprintf(fp,"\nBEGIN:VCARD\nVERSION:2.1");}
+| line 
+| ENDP {fprintf(fp,"\nEND:VCARD");}
 ;
 
 line:
-EOL
+EOL 
 | assign EOL
 ;
 
-assign: EMAIL {printf("EMAIL: %s \n",$1);}
-| TEL  {printf("TEL: %s \n",$1);}
-| DATE {printf("DATE: %s \n",$1);}
-| STRING {printf("N: %s \n",$1);}
-| STRING NUMBER {printf("ADR: %s %.0f\n",$1,$2);}
+assign: EMAIL {fprintf(fp,"\nEMAIL: %s",$1);}
+| TEL  {fprintf(fp,"\nTEL: %s",$1);}
+| DATE {fprintf(fp,"\nDATE: %s",$1);}
+| dir
+| STRING {fprintf(fp,"\nN: %s",$1);}
+
 ;
+
+dir: STRING NUMBER {fprintf(fp,"\nADR: %s %.0f",$1,$2);}
+| dir STRING NUMBER {fprintf(fp,"%s %.0f",$2,$3);}
+;
+
+
 
 
 %%
 int main(int argc, char *argv[])
 {
+    
+    fp = fopen("salida.vcf" , "a");
+   
     yyparse();
 }
 void yyerror(const char *s)

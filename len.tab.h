@@ -63,7 +63,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 7 "len.y" /* yacc.c:1909  */
+#line 8 "len.y" /* yacc.c:1909  */
       
     double num;  
     char *str;
