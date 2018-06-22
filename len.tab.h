@@ -45,15 +45,15 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    STRING = 258,
-    NUMBER = 259,
-    TEL = 260,
-    NDIR = 261,
-    EMAIL = 262,
-    DATE = 263,
-    BGNP = 264,
-    NEW = 265,
-    ENDP = 266,
+    BGNP = 258,
+    NEW = 259,
+    ENDP = 260,
+    STRING = 261,
+    TEL = 262,
+    NDIR = 263,
+    EMAIL = 264,
+    DATE = 265,
+    NUMBER = 266,
     EOL = 267
   };
 #endif

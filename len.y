@@ -8,23 +8,22 @@
     double num;  
     char *str;
 }
-%token STRING NUMBER
-%token TEL NDIR EMAIL DATE 
 
-%token<num> BGNP NEW ENDP
-%token<num> EOL
-
-%type<str> STRING
-%type<str> NUMBER
-%type<str> NDIR
-%type<str> EMAIL
-%type<str> DATE
-%type<str> TEL	
-
+%token<str> BGNP
+%token<str> NEW
+%token<str> ENDP
+%token<str> STRING
+%token<str> TEL
+%token<str> NDIR
+%token<str> EMAIL
+%token<str> DATE
+%token<num> NUMBER
+%token<str> EOL
 
 
 %%
-final_program: BGNP program ENDP EOL
+final_program: BGNP program ENDP
+
 
 program: {printf("");}
 | program line
@@ -35,18 +34,16 @@ EOL
 | assign EOL
 ;
 
-assign: STRING {printf("N: %s \n",$1);}
-| NUMBER 
-| EMAIL {printf("EMAIL: %s \n",$1);}
+assign: EMAIL {printf("EMAIL: %s \n",$1);}
 | TEL  {printf("TEL: %s \n",$1);}
 | DATE {printf("DATE: %s \n",$1);}
-| NDIR {printf("ADR: %s \n",$1);}
+| STRING {printf("N: %s \n",$1);}
+| STRING NUMBER {printf("ADR: %s %.0f\n",$1,$2);}
 ;
 
 
-
 %%
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     yyparse();
 }

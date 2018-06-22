@@ -103,15 +103,15 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    STRING = 258,
-    NUMBER = 259,
-    TEL = 260,
-    NDIR = 261,
-    EMAIL = 262,
-    DATE = 263,
-    BGNP = 264,
-    NEW = 265,
-    ENDP = 266,
+    BGNP = 258,
+    NEW = 259,
+    ENDP = 260,
+    STRING = 261,
+    TEL = 262,
+    NDIR = 263,
+    EMAIL = 264,
+    DATE = 265,
+    NUMBER = 266,
     EOL = 267
   };
 #endif
@@ -385,16 +385,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   12
+#define YYLAST   10
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  13
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  12
+#define YYNRULES  11
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  17
+#define YYNSTATES  15
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -441,8 +441,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    27,    27,    29,    30,    34,    35,    38,    39,    40,
-      41,    42,    43
+       0,    25,    25,    28,    29,    33,    34,    37,    38,    39,
+      40,    41
 };
 #endif
 
@@ -451,9 +451,9 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "STRING", "NUMBER", "TEL", "NDIR",
-  "EMAIL", "DATE", "BGNP", "NEW", "ENDP", "EOL", "$accept",
-  "final_program", "program", "line", "assign", YY_NULLPTR
+  "$end", "error", "$undefined", "BGNP", "NEW", "ENDP", "STRING", "TEL",
+  "NDIR", "EMAIL", "DATE", "NUMBER", "EOL", "$accept", "final_program",
+  "program", "line", "assign", YY_NULLPTR
 };
 #endif
 
@@ -467,10 +467,10 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -4
+#define YYPACT_NINF -6
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-4)))
+  (!!((Yystate) == (-6)))
 
 #define YYTABLE_NINF -1
 
@@ -481,8 +481,8 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -2,    -4,     6,    -3,    -4,    -4,    -4,    -4,    -4,    -4,
-      -4,    -1,    -4,    -4,     0,    -4,    -4
+       0,    -6,     6,    -5,    -6,    -6,    -3,    -6,    -6,    -6,
+      -6,    -6,    -2,    -6,    -6
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -490,20 +490,20 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     3,     0,     0,     1,     7,     8,    10,    12,     9,
-      11,     0,     5,     4,     0,     2,     6
+       0,     3,     0,     0,     1,     2,    10,     8,     7,     9,
+       5,     4,     0,    11,     6
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -4,    -4,    -4,    -4,    -4
+      -6,    -6,    -6,    -6,    -6
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,    13,    14
+      -1,     2,     3,    11,    12
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -511,36 +511,36 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       5,     6,     7,     8,     9,    10,     4,     1,    11,    12,
-       0,    15,    16
+       5,     6,     7,     1,     8,     9,     4,    10,    13,     0,
+      14
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,     4,     5,     6,     7,     8,     0,     9,    11,    12,
-      -1,    12,    12
+       5,     6,     7,     3,     9,    10,     0,    12,    11,    -1,
+      12
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     9,    14,    15,     0,     3,     4,     5,     6,     7,
-       8,    11,    12,    16,    17,    12,    12
+       0,     3,    14,    15,     0,     5,     6,     7,     9,    10,
+      12,    16,    17,    11,    12
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
        0,    13,    14,    15,    15,    16,    16,    17,    17,    17,
-      17,    17,    17
+      17,    17
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     4,     0,     2,     1,     2,     1,     1,     1,
-       1,     1,     1
+       0,     2,     3,     0,     2,     1,     2,     1,     1,     1,
+       1,     2
 };
 
 
@@ -1217,38 +1217,38 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 29 "len.y" /* yacc.c:1646  */
+#line 28 "len.y" /* yacc.c:1646  */
     {printf("");}
 #line 1223 "len.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 38 "len.y" /* yacc.c:1646  */
-    {printf("N: %s \n",(yyvsp[0].str));}
+#line 37 "len.y" /* yacc.c:1646  */
+    {printf("EMAIL: %s \n",(yyvsp[0].str));}
 #line 1229 "len.tab.c" /* yacc.c:1646  */
     break;
 
-  case 9:
-#line 40 "len.y" /* yacc.c:1646  */
-    {printf("EMAIL: %s \n",(yyvsp[0].str));}
+  case 8:
+#line 38 "len.y" /* yacc.c:1646  */
+    {printf("TEL: %s \n",(yyvsp[0].str));}
 #line 1235 "len.tab.c" /* yacc.c:1646  */
     break;
 
-  case 10:
-#line 41 "len.y" /* yacc.c:1646  */
-    {printf("TEL: %s \n",(yyvsp[0].str));}
+  case 9:
+#line 39 "len.y" /* yacc.c:1646  */
+    {printf("DATE: %s \n",(yyvsp[0].str));}
 #line 1241 "len.tab.c" /* yacc.c:1646  */
     break;
 
-  case 11:
-#line 42 "len.y" /* yacc.c:1646  */
-    {printf("DATE: %s \n",(yyvsp[0].str));}
+  case 10:
+#line 40 "len.y" /* yacc.c:1646  */
+    {printf("N: %s \n",(yyvsp[0].str));}
 #line 1247 "len.tab.c" /* yacc.c:1646  */
     break;
 
-  case 12:
-#line 43 "len.y" /* yacc.c:1646  */
-    {printf("ADR: %s \n",(yyvsp[0].str));}
+  case 11:
+#line 41 "len.y" /* yacc.c:1646  */
+    {printf("ADR: %s %.0f\n",(yyvsp[-1].str),(yyvsp[0].num));}
 #line 1253 "len.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1481,9 +1481,9 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 48 "len.y" /* yacc.c:1906  */
+#line 45 "len.y" /* yacc.c:1906  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     yyparse();
 }
